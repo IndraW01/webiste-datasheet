@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\ControlValveGeneral;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ControlValveSeeder extends Seeder
+class ControlValveGeneralSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +15,6 @@ class ControlValveSeeder extends Seeder
      */
     public function run()
     {
-        //
+        return ControlValveGeneral::factory()->count(100)->create();
     }
 }
