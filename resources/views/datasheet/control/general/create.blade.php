@@ -7,7 +7,7 @@
                 <p class="card-description">
                     General
                 </p>
-                <form class="form-sample" action="{{ route('datasheets.control.valve.store') }}" method="POST">
+                <form class="form-sample" action="{{ route('datasheets.control.valve.general.store') }}" method="POST">
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
@@ -137,7 +137,7 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Tambah</button>
-                    <a href="{{ route('datasheets.control.valve.index') }}" class="btn btn-success">Kembali</a>
+                    <a href="{{ route('datasheets.control.valve.general.index') }}" class="btn btn-success">Kembali</a>
                 </form>
             </div>
         </div>

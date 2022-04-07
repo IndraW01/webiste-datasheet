@@ -16,7 +16,7 @@
                         <li>Piping Class: {{ $controlValveGeneral->piping_class }}</li>
                         <li>Schedule: {{ $controlValveGeneral->schedule }}</li>
                     </ul>
-                    <a href="{{ route('datasheets.control.valve.index') }}" class="btn btn-sm btn-primary">Kembali</a>
+                    <a href="{{ route('datasheets.control.valve.general.index') }}" class="btn btn-sm btn-primary">Kembali</a>
                 </div>
             </div>
         </div>

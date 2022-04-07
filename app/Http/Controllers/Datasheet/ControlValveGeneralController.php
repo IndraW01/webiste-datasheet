@@ -21,7 +21,7 @@ class ControlValveGeneralController extends Controller
     public function index()
     {
         return view('datasheet.control.general.index', [
-            'controlValveGenerals' => ControlValveGeneral::latest()->paginate(10)->withQueryString(),
+            'controlValveGenerals' => ControlValveGeneral::latest()->paginate(5)->withQueryString(),
         ]);
     }
 
@@ -54,7 +54,7 @@ class ControlValveGeneralController extends Controller
 
             DB::commit();
 
-            return redirect()->route('datasheets.control.valve.index');
+            return redirect()->route('datasheets.control.valve.general.index');
         } catch (Exception) {
             DB::rollBack();
 
@@ -67,23 +67,23 @@ class ControlValveGeneralController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ControlValveGeneral  $controlValveGeneral
+     * @param  \App\Models\ControlValveGeneral  $general
      * @return \Illuminate\Http\Response
      */
-    public function show(ControlValveGeneral $controlValveGeneral)
+    public function show(ControlValveGeneral $general)
     {
         return view('datasheet.control.general.show', [
-            'controlValveGeneral' => $controlValveGeneral
+            'controlValveGeneral' => $general
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ControlValveGeneral  $controlValveGeneral
+     * @param  \App\Models\ControlValveGeneral  $general
      * @return \Illuminate\Http\Response
      */
-    public function edit(ControlValveGeneral $controlValveGeneral)
+    public function edit(ControlValveGeneral $general)
     {
         //
     }
@@ -92,10 +92,10 @@ class ControlValveGeneralController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateControlValveGeneralRequest  $request
-     * @param  \App\Models\ControlValveGeneral  $controlValveGeneral
+     * @param  \App\Models\ControlValveGeneral  $general
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateControlValveGeneralRequest $request, ControlValveGeneral $controlValveGeneral)
+    public function update(UpdateControlValveGeneralRequest $request, ControlValveGeneral $general)
     {
         //
     }
@@ -103,10 +103,10 @@ class ControlValveGeneralController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ControlValveGeneral  $controlValveGeneral
+     * @param  \App\Models\ControlValveGeneral  $general
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ControlValveGeneral $controlValveGeneral)
+    public function destroy(ControlValveGeneral $general)
     {
         //
     }

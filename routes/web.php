@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Datasheet\ControlValveController;
 use App\Http\Controllers\Datasheet\ControlValveGeneralController;
 
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +15,11 @@ Route::get('/', function () {
 // Route::resource('users', ControlValveGeneralController::class);
 
 Route::prefix('/datasheets')->name('datasheets.')->group(function() {
-    Route::resource('/control-valve', ControlValveGeneralController::class)->names('control.valve')->parameters(['control-valve' => 'controlValveGeneral']);
+    // Route Global Datasheet Control Valve
+    Route::get('/control-valve', [ControlValveController::class, 'index'])->name('control.valve');
+
+    // Route Control Valve General
+    Route::resource('/control-valve/generals', ControlValveGeneralController::class)->names('control.valve.general');
 });
 
 Auth::routes([

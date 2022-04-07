@@ -15,6 +15,6 @@ class ControlValveGeneralSeeder extends Seeder
      */
     public function run()
     {
-        return ControlValveGeneral::factory()->count(100)->create();
+        return ControlValveGeneral::factory()->count(10)->create();
     }
 }

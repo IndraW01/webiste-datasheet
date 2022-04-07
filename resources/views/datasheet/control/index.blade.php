@@ -15,16 +15,13 @@
         </style>
     @endpush
     <div class="row">
-
-
         <div class="col-sm-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <h4 class="card-title">Datasheet</h4>
                         <div class="add">
-                            <a href="{{ route('datasheets.control.valve.general.create') }}" class="btn btn-primary btn-sm">Tambah Valve General</a>
-                            <a href="{{ route('datasheets.control.valve') }}" class="btn btn-success btn-sm">Kembali</a>
+                            <a href="{{ route('datasheets.control.valve.general.index') }}" class="btn btn-primary btn-sm">All Data</a>
                         </div>
                     </div>
                     <p class="card-description">
@@ -45,7 +42,7 @@
                             <tbody>
                                 @foreach ($controlValveGenerals as $key => $controlValveGeneral)
                                     <tr>
-                                        <td>{{ $key + $controlValveGenerals->firstItem() }}</td>
+                                        <td>{{ $key + 1 }}</td>
                                         <td>{{ $controlValveGeneral->tag_no }}</td>
                                         <td>{{ $controlValveGeneral->p_id_number }}</td>
                                         <td>{{ $controlValveGeneral->line_number }}</td>
@@ -58,8 +55,51 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="mt-3">
-                        {{ $controlValveGenerals->onEachSide(5)->links() }}
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="card-title">Datasheet</h4>
+                        <div class="add">
+                            <a href="{{ route('datasheets.control.valve.general.index') }}" class="btn btn-primary btn-sm">All Data</a>
+                        </div>
+                    </div>
+                    <p class="card-description">
+                        Control Valve Process Condition
+                    </p>
+                    <div class="table-responsive pt-3">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Tag No</th>
+                                    <th>P&ID Number</th>
+                                    <th>Line Number</th>
+                                    <th>Line Size</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($controlValveGenerals as $key => $controlValveGeneral)
+                                    <tr>
+                                        <td>{{ $key + 1 }}</td>
+                                        <td>{{ $controlValveGeneral->tag_no }}</td>
+                                        <td>{{ $controlValveGeneral->p_id_number }}</td>
+                                        <td>{{ $controlValveGeneral->line_number }}</td>
+                                        <td>{{ $controlValveGeneral->line_size }}</td>
+                                        <td>
+                                            <a href="{{ route('datasheets.control.valve.general.show', ['general' => $controlValveGeneral]) }}" class="btn btn-success btn-sm">Show</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
               </div>
