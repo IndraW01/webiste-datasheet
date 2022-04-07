@@ -7,7 +7,7 @@
         </a>
       </li>
       <li class="nav-item nav-category">Datasheet</li>
-      <li class="nav-item">
+      <li class="nav-item {{ request()->routeIs('datasheets.control.valve.*') ? 'active' : '' }}">
         <a class="nav-link" data-bs-toggle="collapse" href="#datasheet" aria-expanded="false" aria-controls="datasheet">
           <i class="menu-icon mdi mdi-floor-plan"></i>
           <span class="menu-title">Datasheet</span>
@@ -15,7 +15,7 @@
         </a>
         <div class="collapse" id="datasheet">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{{ route('datasheets.control.valve.index') }}">Control Valve</a></li>
+            <li class="nav-item {{ request()->routeIs('datasheets.control.valve.general.*') ? 'active' : '' }}""> <a class="nav-link" href="{{ route('datasheets.control.valve') }}">Control Valve</a></li>
             <li class="nav-item"> <a class="nav-link" href="#">ON/OFF Valve</a></li>
             <li class="nav-item"> <a class="nav-link" href="#">Pressure Safety Valve</a></li>
           </ul>
