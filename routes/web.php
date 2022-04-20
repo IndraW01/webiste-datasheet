@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ControlValveBodyAndValveTrimController;
 use App\Http\Controllers\Datasheet\ControlValveController;
 use App\Http\Controllers\Datasheet\ControlValveGeneralController;
 
@@ -20,8 +21,11 @@ Route::prefix('/datasheets')->name('datasheets.')->group(function() {
 
     // Route Control Valve General
     Route::resource('/control-valve/generals', ControlValveGeneralController::class)->names('control.valve.general');
+    // Route Control Valve Body And Valve Trim
+    Route::resource('/control-valve/body-trim', ControlValveBodyAndValveTrimController::class)->names('control.valve.body.trim');
 });
 
+// Routes Login
 Auth::routes([
     'reset' => false, // Password Reset Routes...
     'verify' => false, // Email Verification Routes...
