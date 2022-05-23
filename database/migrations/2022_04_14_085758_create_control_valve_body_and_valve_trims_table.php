@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('control_valve_body_and_valve_trims', function (Blueprint $table) {
             $table->id();
+            $table->string('datasheet', 10)->unique();
             $table->string('manufacturer');
             $table->string('valve_body_type');
             $table->string('body_size');

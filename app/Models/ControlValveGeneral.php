@@ -13,6 +13,7 @@ class ControlValveGeneral extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
+        'datasheet',
         'tag_no',
         'p_id_number',
         'line_number',

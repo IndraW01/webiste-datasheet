@@ -16,7 +16,12 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             ControlValveGeneralSeeder::class,
+            ControlValveProcessConditionSeeder::class,
             ControlValveBodyAndValveTrimSeeder::class,
+            ControlValvePneumaticSeeder::class,
+            ControlValveActuatorSeeder::class,
+            ControlValveElementSeeder::class,
+            ControlValvePurchaseSeeder::class,
         ]);
     }
 }

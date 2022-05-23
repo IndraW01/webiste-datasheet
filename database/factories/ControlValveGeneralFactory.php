@@ -19,6 +19,7 @@ class ControlValveGeneralFactory extends Factory
         $this->faker->seed('123');
 
         return [
+            'datasheet' => $this->faker->unique()->numberBetween(1, 10),
             'tag_no' =>  $this->faker->unique()->bothify('???-#####'),
             'p_id_number' => $this->faker->unique()->bothify('??-???-?????-####-######'),
             'line_number' => $this->faker->unique()->bothify('?"-??-??-??#-##.##'),

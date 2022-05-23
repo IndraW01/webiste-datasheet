@@ -17,6 +17,7 @@
                         <li>Schedule: {{ $controlValveGeneral->schedule }}</li>
                     </ul>
                     <a href="{{ route('datasheets.control.valve.general.index') }}" class="btn btn-sm btn-primary">Kembali</a>
+                    <a href="{{ route('datasheets.control.valve.general.edit' , ['general' => $controlValveGeneral]) }}" class="btn btn-sm btn-warning">Edit</a>
                 </div>
             </div>
         </div>

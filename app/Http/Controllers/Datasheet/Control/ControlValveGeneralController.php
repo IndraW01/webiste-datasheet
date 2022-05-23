@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Datasheet;
+namespace App\Http\Controllers\Datasheet\Control;
 
 use Illuminate\Support\Facades\DB;
 

@@ -19,6 +19,7 @@ class ControlValveBodyAndValveTrimFactory extends Factory
         $this->faker->seed('123');
 
         return [
+            'datasheet' => $this->faker->unique()->numberBetween(1, 10),
             'manufacturer' => $this->faker->unique()->firstName() . '/' . $this->faker->lastName(),
             'valve_body_type' => 'Globe',
             'body_size' => '1"',

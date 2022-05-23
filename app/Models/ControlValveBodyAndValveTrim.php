@@ -10,6 +10,7 @@ class ControlValveBodyAndValveTrim extends Model
     use HasFactory;
 
     protected $fillable = [
+        'datasheet',
         'manufacturer',
         'valve_body_type',
         'body_size',

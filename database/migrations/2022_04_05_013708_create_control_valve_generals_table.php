@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('control_valve_generals', function (Blueprint $table) {
             $table->id();
+            $table->string('datasheet', 10)->unique();
             $table->string('tag_no')->unique();
             $table->string('p_id_number')->unique();
             $table->string('line_number')->unique();
