@@ -13,7 +13,7 @@ class StoreControlValveActuatorRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,20 @@ class StoreControlValveActuatorRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'datasheet' => 'required',
+            'actuator' => 'required',
+            'travel' => 'required',
+            'bench' => 'required',
+            'supply' => 'required',
+            'air_supply' => 'required',
+            'to_actuator' => 'required',
+            'fails_valve' => 'required',
+            'handwheel' => 'required',
+            'hydrostatic' => 'required',
+            'mounting' => 'required',
+            'lockup' => 'required',
+            'mechanical_position' => 'required',
+            'mechanical_stopper' => 'required',
         ];
     }
 }

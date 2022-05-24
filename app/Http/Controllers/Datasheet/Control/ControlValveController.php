@@ -29,6 +29,14 @@ class ControlValveController extends Controller
 
     public function datasheet(int $id)
     {
-
+        return view('datasheet.control.datasheet', [
+            'controlValveGeneral' => ControlValveGeneral::whereDatasheet($id)->first(),
+            'controlValveProcessCondition' => ControlValveProcessCondition::whereDatasheet($id)->first(),
+            'controlValveBodyAndValveTrim' => ControlValveBodyAndValveTrim::whereDatasheet($id)->first(),
+            'controlValvePneumatic' => ControlValvePneumatic::whereDatasheet($id)->first(),
+            'controlValveActuator' => ControlValveActuator::whereDatasheet($id)->first(),
+            'controlValveElement' => ControlValveElement::whereDatasheet($id)->first(),
+            'controlValvePurchase' => ControlValvePurchase::whereDatasheet($id)->first(),
+        ]);
     }
 }

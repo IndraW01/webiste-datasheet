@@ -44,6 +44,9 @@ class ControlValvepneumaticController extends Controller
     {
         $validateData = $request->validated();
 
+        $jumlahData = ControlValvePneumatic::query()->count();
+        $validateData['datasheet'] = $jumlahData + 1;
+
         try {
             DB::beginTransaction();
 

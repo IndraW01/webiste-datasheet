@@ -44,6 +44,9 @@ class ControlValveActuatorController extends Controller
     {
         $validateData = $request->validated();
 
+        $jumlahData = ControlValveActuator::query()->count();
+        $validateData['datasheet'] = $jumlahData + 1;
+
         try {
             DB::beginTransaction();
 

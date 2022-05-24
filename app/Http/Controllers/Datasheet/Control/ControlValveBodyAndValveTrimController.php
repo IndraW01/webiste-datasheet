@@ -44,6 +44,9 @@ class ControlValveBodyAndValveTrimController extends Controller
     {
         $validateData = $request->validated();
 
+        $jumlahData = ControlValveBodyAndValveTrim::query()->count();
+        $validateData['datasheet'] = $jumlahData + 1;
+
         try {
             DB::beginTransaction();
 

@@ -44,6 +44,9 @@ class ControlValveProcessConditionController extends Controller
     {
         $validateData = $request->validated();
 
+        $jumlahData = ControlValveProcessCondition::query()->count();
+        $validateData['datasheet'] = $jumlahData + 1;
+
         try {
             DB::beginTransaction();
 

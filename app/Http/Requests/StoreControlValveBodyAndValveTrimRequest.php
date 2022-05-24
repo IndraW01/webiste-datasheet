@@ -13,7 +13,7 @@ class StoreControlValveBodyAndValveTrimRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,27 @@ class StoreControlValveBodyAndValveTrimRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'datasheet' => 'required',
+            'manufacturer' => 'required',
+            'valve_body_type' => 'required',
+            'body_size' => 'required',
+            'end_connect_size' => 'required',
+            'connect_type_rating' => 'required',
+            'flange_face_finish' => 'required',
+            'valve_rated_cv' => 'required',
+            'body_material' => 'required',
+            'plug_material' => 'required',
+            'seat_material' => 'required',
+            'seal_material' => 'required',
+            'stem_material' => 'required',
+            'bolt_nut_material' => 'required',
+            'packing_type_material' => 'required',
+            'flow_direction' => 'required',
+            'shut_off' => 'required',
+            'model_no' => 'required',
+            'trim_charac' => 'required',
+            'port_size' => 'required',
+            'outlet' => 'required',
         ];
     }
 }

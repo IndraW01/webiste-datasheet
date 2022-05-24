@@ -13,7 +13,7 @@ class StoreControlValveElementRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,20 @@ class StoreControlValveElementRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'datasheet' => 'required',
+            'element_type' => 'required',
+            'element_material' => 'required',
+            'body_material' => 'required',
+            'flange_material' => 'required',
+            'bolt_and_nut' => 'required',
+            'fill_fluid' => 'required',
+            'painting' => 'required',
+            'instrument_range' => 'required',
+            'calibration_range' => 'required',
+            'scale' => 'required',
+            'static_pressure' => 'required',
+            'model_no' => 'required',
+            'manufacture' => 'required',
         ];
     }
 }

@@ -5,7 +5,7 @@
             <div class="card-body">
                 <h4 class="card-title">Tambah Datasheet</h4>
                 <p class="card-description">
-                    General
+                    GENERAL
                 </p>
                 <form class="form-sample" action="{{ route('datasheets.control.valve.general.store') }}" method="POST">
                     @csrf

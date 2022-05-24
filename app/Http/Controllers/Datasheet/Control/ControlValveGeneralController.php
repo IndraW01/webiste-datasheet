@@ -45,6 +45,9 @@ class ControlValveGeneralController extends Controller
     {
         $validateData = $request->validated();
 
+        $jumlahData = ControlValveGeneral::query()->count();
+        $validateData['datasheet'] = $jumlahData + 1;
+
         try {
             DB::beginTransaction();
 
